@@ -1,5 +1,7 @@
 # TacLink-Sim2Real
-Open-source simulation tool and sim2real method for Large-scale Tactile Sensing Devices, based on SOFA-GAZEBO-GAN framework.
+Open-source simulation tool and sim2real method for Large-scale Tactile Sensing Devices, based on SOFA-GAZEBO-GAN framework. The overview of the simulation framework could be seen below.
+
+![Overview](https://github.com/Ho-lab-jaist/TacLink-Sim2Real/blob/main/figures/Fig_overview.PNG)
 
 ## TO-DO
 ### Image acquisition module for obtaining tactile image dataset, using ROS/GAZEBO.
