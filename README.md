@@ -44,6 +44,6 @@ Then, write the following command to the end of *.basrc* file, given the skin/ma
 
 ```
 
-export GAZEBO_MODEL_PATH=$[path/to/data]/skin_state:$MY_MODEL_PATH:$GAZEBO_MODEL_PATH
+export GAZEBO_MODEL_PATH=$[path/to/data]/skin_state:$GAZEBO_MODEL_PATH
 
 ```
