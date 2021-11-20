@@ -8,7 +8,20 @@ Run image acquisition module for obtaining tactile image dataset, using ROS/GAZE
 
 ```
 
-$ cd ~/catkin_ws/src/sofa_gazebo_interface
+$ cd [home/username]/catkin_ws/src
+
+```
+Then make the catkin environment
+```
+
+$ catkin_make
+
+```
+Next, move to the home directory of the module to avoid unfound reference path
+```
+
+$ cd [home/username]/catkin_ws/src/sofa_gazebo_interface
+
 
 ```
 
