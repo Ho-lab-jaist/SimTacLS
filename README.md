@@ -2,7 +2,7 @@
 Open-source simulation tool and sim2real method for Large-scale Tactile Sensing Devices, based on SOFA-GAZEBO-GAN framework.
 
 ## TO-DO
-Run image acquisition module for obtaining tactile image dataset, using ROS/GAZEBO.
+### Image acquisition module for obtaining tactile image dataset, using ROS/GAZEBO.
 
 1. Move to Catkin workspace (ROS) working directory.
 
@@ -47,3 +47,24 @@ Then, write the following command to the end of *.basrc* file, given the skin/ma
 export GAZEBO_MODEL_PATH=$[path/to/data]/skin_state:$GAZEBO_MODEL_PATH
 
 ```
+
+4. Run program file (.py) for acquisition of tactile image dataset
+   1. Single contact dataset: Run the following python program for starting the acquisition process (single-touch data)
+      ```
+
+      $ rosrun vitaclink_gazebo single_point_tactile_image_acquisition.py
+
+      ```
+    2. Multiple contact dataset: 
+        
+        The file name of skin and marker states (.STL) exported from SOFA should be saved as follows: `skin{group:04}_{depth:02}.stl` and `marker{group:04}_{depth:02}.stl`; e.g., `skin0010_15.stl` is the skin state of `data group: 10` and `contact depth: 15`.
+
+       The output tactile images will be formatted as `{group}_{contact_depth}.jpg`. (For our demostration, we have 500 contact groups, each consists of 20 incremental contact depths).
+
+       Run the following python program for starting the acquisition process (multi-touch data)
+      ```
+
+      $ rosrun vitaclink_gazebo multiple_point_tactile_image_acquisition.py
+
+      ```
+
