@@ -44,7 +44,7 @@ export GAZEBO_MODEL_PATH=$[path/to/data]/skin_state:$GAZEBO_MODEL_PATH
         
         The file name of skin and marker states (.STL) exported from SOFA should be saved as follows: `skin{group:04}_{depth:02}.stl` and `marker{group:04}_{depth:02}.stl`; e.g., `skin0010_15.stl` is the skin state of `data group: 10` and `contact depth: 15`.
 
-       The output tactile images will be formatted as `{group}_{contact_depth}.jpg`. (For our demostration, we have 500 contact groups, each consists of 20 incremental contact depths).
+       The output tactile images will be formatted as `{group}_{depth}.jpg`. (For our demostration, we have 500 contact groups, each consists of 20 incremental contact depths).
 
        Run the following python program for starting the acquisition process (multi-touch data)
       ```
