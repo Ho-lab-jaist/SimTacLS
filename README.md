@@ -6,9 +6,9 @@ Open-source simulation tool and sim2real method for Large-scale Tactile Sensing 
 ## For Developers
 
 ## TO-DO
-### Soft skin modelling, using ROS/GAZEBO.
+### Soft skin modelling, using SOFA:
 
-### Image acquisition module for obtaining tactile image dataset, using ROS/GAZEBO.
+### Image acquisition module for obtaining tactile image dataset, using ROS/GAZEBO:
 
 1. Move to Catkin workspace (ROS) working directory.
 
@@ -57,7 +57,7 @@ export GAZEBO_MODEL_PATH=$[path/to/data]/skin_state:$GAZEBO_MODEL_PATH
       $ rosrun vitaclink_gazebo multiple_point_tactile_image_acquisition.py
       ```
       
-### Learning and Sim2Real, based on TacNet and GAN networks.
+### Learning and Sim2Real, based on TacNet and GAN networks:
       
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
