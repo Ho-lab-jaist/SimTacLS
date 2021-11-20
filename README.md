@@ -7,53 +7,38 @@ Open-source simulation tool and sim2real method for Large-scale Tactile Sensing 
 1. Move to Catkin workspace (ROS) working directory.
 
 ```
-
 $ cd [home/username]/catkin_ws/src
-
 ```
 Then make the catkin environment
 ```
-
 $ catkin_make
-
 ```
 Next, move to the home directory of the module to avoid unfound reference path
 ```
-
 $ cd [home/username]/catkin_ws/src/sofa_gazebo_interface
-
-
 ```
 
 2. Start Gazebo simulation environment for TacLink.
 
 ```
-
 $ roslaunch vitaclink_gazebo vitaclink_world.launch
-
 ```
 
 3. Add PATH for Gazebo models (model uri), if necessary. This would be helful if the skin/marker states (.STL file) were not in the default Gazebo model directory.
 
 ```
-
 $ nano ~/.bashrc
-
 ```
 Then, write the following command to the end of *.basrc* file, given the skin/marker states are in the *skin_state* directory.
 
 ```
-
 export GAZEBO_MODEL_PATH=$[path/to/data]/skin_state:$GAZEBO_MODEL_PATH
-
 ```
 
 4. Run program file (.py) for acquisition of tactile image dataset
    1. Single contact dataset: Run the following python program for starting the acquisition process (single-touch data)
       ```
-
       $ rosrun vitaclink_gazebo single_point_tactile_image_acquisition.py
-
       ```
     2. Multiple contact dataset: 
         
@@ -63,8 +48,5 @@ export GAZEBO_MODEL_PATH=$[path/to/data]/skin_state:$GAZEBO_MODEL_PATH
 
        Run the following python program for starting the acquisition process (multi-touch data)
       ```
-
       $ rosrun vitaclink_gazebo multiple_point_tactile_image_acquisition.py
-
       ```
-
