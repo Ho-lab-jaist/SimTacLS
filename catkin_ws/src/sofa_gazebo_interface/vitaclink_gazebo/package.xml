@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>vitaclink_gazebo</name>
+  <version>0.0.0</version>
+  <description>The vitaclink_gazebo package</description>
+
+  <maintainer email="quan-luu@jaist.ac.jp">Quan Luu</maintainer>
+
+  <license>BSD</license>
+
+  <author email="quan-luu@jaist.ac.jp">Quan Luu</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>tf</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
+  <exec_depend>gazebo_msgs</exec_depend>
+  <exec_depend>vitaclink_description</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+</package>

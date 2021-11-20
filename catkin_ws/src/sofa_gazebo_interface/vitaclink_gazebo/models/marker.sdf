@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="my_model">
+    <pose>0 0 0.0 0 0 0</pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://marker2623_01.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+	      <material>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <emissive>1 1 1 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

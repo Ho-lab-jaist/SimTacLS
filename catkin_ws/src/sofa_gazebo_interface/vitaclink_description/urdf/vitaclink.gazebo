@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<robot>
+  <!-- upper camera_link -->
+  <gazebo reference="camera_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+
+  <!-- bottom camera_link -->
+  <gazebo reference="camera_link_bot">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+
+  <!-- bottom housing part -->
+  <gazebo reference="housing_bot">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <!-- upper housing part -->
+  <gazebo reference="housing_up">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+
+  <!-- robot bone 
+  <gazebo reference="bone">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/GreyTransparent</material>
+  </gazebo> -->
+
+  <!-- robot bone -->
+  <gazebo reference="hand">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/DepthMap</material>
+  </gazebo>
+
+  <!-- upper camera -->
+  <gazebo reference="camup_link_optical">
+    <sensor type="wideanglecamera" name="camera_up">
+      <update_rate>30.0</update_rate>
+      <camera name="cam_up">
+        <horizontal_fov>3.141592</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.001</near>
+          <far>100</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+        <!-- A new section named `lens`. -->
+        <lens>
+          <!-- type element is mandatory -->
+          <type>custom</type>
+          <!-- manually defined mapping function r = c1*f*fun(theta/c2 + c3) -->
+          <!-- More information here: https://en.wikipedia.org/wiki/Fisheye_lens#Mapping_function -->
+          <custom_function>
+            <c1>1.0</c1>
+            <!-- linear scaling -->
+            <c2>1.95</c2>
+            <!-- angle scaling -->
+            <f>6</f>
+            <!-- one more scaling parameter -->
+            <fun>tan</fun>
+            <!-- one of sin,tan,id -->
+          </custom_function>
+          <!-- if it is set to `true` your horizontal FOV will ramain as defined -->
+          <!-- othervise it depends on lens type and custom function, if there is one -->
+          <scale_to_hfov>true</scale_to_hfov>
+          <!-- clip everything that is outside of this angle -->
+          <cutoff_angle>3</cutoff_angle>
+          <!-- resolution of the cubemap texture, the highter it is - the sharper is your image -->
+          <env_texture_size>512</env_texture_size>
+        </lens>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>30</updateRate>
+        <cameraName>vitaclink/camera_up</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camup_link_optical</frameName>
+        <!-- setting hackBaseline to anything but 0.0 will cause a misalignment
+            between the gazebo sensor image and the frame it is supposed to
+            be attached to -->
+        <hackBaseline>0.07</hackBaseline>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+ <!-- bottom camera -->
+  <gazebo reference="cambot_link_optical">
+    <sensor type="wideanglecamera" name="camera_bot">
+      <update_rate>30.0</update_rate>
+      <camera name="cam_bot">
+        <horizontal_fov>3.141592</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.001</near>
+          <far>100</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+        <!-- A new section named `lens`. -->
+        <lens>
+          <!-- type element is mandatory -->
+          <type>custom</type>
+          <!-- manually defined mapping function r = c1*f*fun(theta/c2 + c3) -->
+          <!-- More information here: https://en.wikipedia.org/wiki/Fisheye_lens#Mapping_function -->
+          <custom_function>
+            <c1>1.0</c1>
+            <!-- linear scaling -->
+            <c2>1.95</c2>
+            <!-- angle scaling -->
+            <f>6</f>
+            <!-- one more scaling parameter -->
+            <fun>tan</fun>
+            <!-- one of sin,tan,id -->
+          </custom_function>
+          <!-- if it is set to `true` your horizontal FOV will ramain as defined -->
+          <!-- othervise it depends on lens type and custom function, if there is one -->
+          <scale_to_hfov>true</scale_to_hfov>
+          <!-- clip everything that is outside of this angle -->
+          <cutoff_angle>3</cutoff_angle>
+          <!-- resolution of the cubemap texture, the highter it is - the sharper is your image -->
+          <env_texture_size>512</env_texture_size>
+        </lens>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>30</updateRate>
+        <cameraName>vitaclink/camera_bot</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>cambot_link_optical</frameName>
+        <!-- setting hackBaseline to anything but 0.0 will cause a misalignment
+            between the gazebo sensor image and the frame it is supposed to
+            be attached to -->
+        <hackBaseline>0.07</hackBaseline>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>
