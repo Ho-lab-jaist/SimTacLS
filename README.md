@@ -3,7 +3,11 @@ Open-source simulation tool and sim2real method for Large-scale Tactile Sensing 
 
 ![Overview](https://github.com/Ho-lab-jaist/TacLink-Sim2Real/blob/main/figures/Fig_overview.PNG)
 
+## For Developers
+
 ## TO-DO
+### Soft skin modelling, using ROS/GAZEBO.
+
 ### Image acquisition module for obtaining tactile image dataset, using ROS/GAZEBO.
 
 1. Move to Catkin workspace (ROS) working directory.
@@ -52,3 +56,16 @@ export GAZEBO_MODEL_PATH=$[path/to/data]/skin_state:$GAZEBO_MODEL_PATH
       ```
       $ rosrun vitaclink_gazebo multiple_point_tactile_image_acquisition.py
       ```
+      
+### Learning and Sim2Real, based on TacNet and GAN networks.
+      
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
+## Contact
+- Project Manager
+	- Ho Anh Van - [van-ho@jaist.ac.jp](mailto:van-ho@jaist.ac.jp)
+- Developers
+	- Luu Khanh Quan - [quan-luu@jaist.ac.jp](mailto:quan-luu@jaist.ac.jp)
+	- Nguyen Huu Nhan - [nhnhan@jaist.ac.jp](nhnhan@jaist.ac.jp)
+## Acknowledgements
+This work was supported in part by JSPS KAKENHI under Grant 18H01406 and JST Precursory Research for Embryonic Science and Technology PRESTO under Grant JPMJPR2038.
