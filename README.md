@@ -19,3 +19,18 @@ $ cd ~/catkin_ws/src/sofa_gazebo_interface
 $ roslaunch vitaclink_gazebo vitaclink_world.launch
 
 ```
+
+3. Add PATH for Gazebo models (model uri), if necessary. This would be helful if the skin/marker states (.STL file) were not in the default Gazebo model directory.
+
+```
+
+$ nano ~/.bashrc
+
+```
+Then, write the following command to the end of *.basrc* file, given the skin/marker states are in the *skin_state* directory.
+
+```
+
+export GAZEBO_MODEL_PATH=$[path/to/data]/skin_state:$MY_MODEL_PATH:$GAZEBO_MODEL_PATH
+
+```
