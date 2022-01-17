@@ -38,6 +38,9 @@ $ nano ~/.bashrc
 Then, write the following command to the end of *.basrc* file, given the skin/marker states are in the *skin_state* directory.
 
 ```
+source /usr/share/share/gazebo/setup.sh
+```
+```
 export GAZEBO_MODEL_PATH=$[path/to/data]/skin_state:$GAZEBO_MODEL_PATH
 ```
 
