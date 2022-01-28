@@ -1,4 +1,4 @@
-# TacLink-Sim2Real
+# SimTacLS: a Framework for Simulation and Learning of Vision-based Tactile Sensing at Large Scale
 Open-source simulation tool and sim2real method for Large-scale Tactile Sensing Devices, based on SOFA-GAZEBO-GAN framework. The overview of the simulation framework could be seen below.
 
 ![Overview](https://github.com/Ho-lab-jaist/TacLink-Sim2Real/blob/main/figures/Fig_overview.PNG)
