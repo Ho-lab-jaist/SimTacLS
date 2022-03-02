@@ -17,7 +17,7 @@ import os
 from threading import Thread
 
 # import TacNet
-from networks.unet_model import TacNetUNet2, print_networks
+from networks.unet_model import TacNetUNet, print_networks
 
 # import modules related to GAN model
 from gan.options.test_options import TestOptions
@@ -29,16 +29,15 @@ from mcl import mcl
 
 from utils import simtacls_utils
 
+# Load R2S-TN
 opt = TestOptions().parse()  # get test options
 model = create_model(opt)      # create a model given opt.model and other options
 model.setup(opt)               # regular setup: load and print networks; create schedulers
 
 # Load TacNet
-root_dir = 'Z:/'
 model_name = 'TacNetUnet2_2022_01_25_single_double_touch_dataset.pt' # TacNet_2022_01_06_single_double_touch_dataset
-model_name_path = os.path.join('iotouch_env/train_model', model_name)
-model_dir = os.path.join(root_dir, model_name_path)
-tacnet = TacNetUNet2()
+model_dir = os.path.join('./train_model', model_name)
+tacnet = TacNetUNet()
 print('model [TacNet] was created')
 print_networks(tacnet, False)
 print('loading the model from {0}'.format(model_dir))
