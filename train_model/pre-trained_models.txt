@@ -1,0 +1,1 @@
+Please contact quan-luu@jaist.ac.jp for R2S-TN and TacNet pre-trained model weights (.pt file extension)
