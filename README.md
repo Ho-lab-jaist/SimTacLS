@@ -16,6 +16,8 @@ Please note that the following dependecies required:
 - pyvista
 - pyvistaqt
 
+For the pre-trained R2S-TN and TacNet models, please contact [quan-luu@jaist.ac.jp](mailto:quan-luu@jaist.ac.jp) for more information.
+
 ### Soft skin modelling, using SOFA:
 
 ### Image acquisition module for obtaining tactile image dataset, using ROS/GAZEBO:
