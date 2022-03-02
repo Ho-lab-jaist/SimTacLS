@@ -5,10 +5,9 @@ Open-source simulation tool and sim2real method for Large-scale Tactile Sensing 
 
 ## Documentation
 ### Real-time perception
-Run 
-
+Run: 
 ```
-$ python simtacls_run_realtime
+$ python simtacls_run_realtime.py
 ```
 Please note that the following dependecies required:
 - pytorch
@@ -73,7 +72,12 @@ export GAZEBO_MODEL_PATH=$[path/to/data]/skin_state:$GAZEBO_MODEL_PATH
       ```
       
 ### Learning and Sim2Real, based on TacNet and GAN networks:
-      
+For TacNet training, run:
+```
+$ python tacnet_train_mutitouch_dataset.py
+```
+Note that the full simulation dataset is required for the program executaion, for the full dataset please contact correspondances for more information.
+
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
