@@ -72,3 +72,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 	- Luu Khanh Quan - [quan-luu@jaist.ac.jp](mailto:quan-luu@jaist.ac.jp)
 ## Acknowledgements
 This work was supported in part by JSPS KAKENHI under Grant 18H01406 and JST Precursory Research for Embryonic Science and Technology PRESTO under Grant JPMJPR2038.
+
+## Disclaimer
+Since we are an acedamic lab, the software provided here is not as computationally robust or efficient as possible and is dedicated for research purpose only. There is no bug-free guarantee and we also do not personnel devoted for regular maintanence. 
