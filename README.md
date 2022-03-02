@@ -17,6 +17,8 @@ Please note that the following dependecies required:
 
 For the pre-trained R2S-TN and TacNet models, please contact [quan-luu@jaist.ac.jp](mailto:quan-luu@jaist.ac.jp) for more information.
 
+The program was tested on a couple of fisheye-lense cameras (ELP, USB2.0 Webcam Board 2 Mega Pixels 1080P OV2710 CMOS Camera Module) which optionally provide up to 120fps. And the processing speed heavily depends on computing resources, e.g., GPU (NVIDIA, RTX8000, RTX3090, GTX 1070Ti were proved to be compatible)
+.
 ### Soft skin modelling, using SOFA:
 
 ### Image acquisition module for obtaining tactile image dataset, using ROS/GAZEBO:
