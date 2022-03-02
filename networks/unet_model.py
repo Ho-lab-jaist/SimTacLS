@@ -32,68 +32,8 @@ class UNet(nn.Module):
         x = self.up2(x, x4) # x:  (64, 20, 24) 
         force_map = self.outc(x) # force_map:  (3, 20, 24) 
         return force_map
-
+    
 class TacNetUNet(nn.Module):
-    def __init__(self, in_nc=6, n_classes=3, num_of_neurons=2048, bilinear=False):
-        super(TacNetUNet, self).__init__()
-        self.n_channels = in_nc
-        self.n_classes = n_classes
-        self.bilinear = bilinear
-
-        self.inc = DoubleConv(in_nc, 8)
-        self.down1 = Encoder(8, 16)
-        self.down2 = Encoder(16, 32)
-        self.down3 = Encoder(32, 64)
-        self.down4 = Encoder(64, 128)
-        self.down5 = Encoder(128, 256)
-        self.down6 = nn.Conv2d(256, 256, kernel_size=(3, 2), padding=0)
-        factor = 2 if bilinear else 1
-        self.up1 = Decoder(256, 128 // factor, bilinear)
-        self.up2 = Decoder(128, 64 // factor, bilinear)
-        self.outc = OutConv(64, n_classes)
-
-        outputs = 585
-        self.fc1 = nn.Linear(1*24*28, num_of_neurons, bias=True)
-        self.fc2 = nn.Linear(num_of_neurons, num_of_neurons, bias=True)
-        self.fc3 = nn.Linear(num_of_neurons, outputs, bias=True)
-        self.lrelu = nn.LeakyReLU(negative_slope=0.2, inplace=True)
-
-    def forward(self, x):   # x:  (6, 224, 224)
-        x1 = self.inc(x)    # x1: (8, 224, 224)
-        x2 = self.down1(x1) # x2: (16, 112, 112)
-        x3 = self.down2(x2) # x3: (32, 56, 56)
-        x4 = self.down3(x3) # x4: (64, 28, 28)
-        x5 = self.down4(x4) # x5: (128, 14, 14)
-        x6 = self.down5(x5) # x6: (256, 7, 7)
-        x7 = self.down6(x6) # x7: (256, 5, 6)
-        x = self.up1(x7, x5)# x:  (128, 10, 12) 
-        x = self.up2(x, x4) # x:  (64, 20, 24) 
-        force_map = self.outc(x) # force_map:  (3, 24, 28) 
-        # feed forward fully connected layers for x feature map (channel)
-        output_x = force_map[:, 0, :, :].view(-1, self.num_flat_features(force_map[:, 0, :, :]))
-        output_x = self.lrelu(self.fc1(output_x))
-        output_x = self.lrelu(self.fc2(output_x))
-        output_x = self.fc3(output_x).unsqueeze(1)
-        # feed forward fully connected layers for y feature map (channel)
-        output_y = force_map[:, 1, :, :].view(-1, self.num_flat_features(force_map[:, 1, :, :]))
-        output_y = self.lrelu(self.fc1(output_y))
-        output_y = self.lrelu(self.fc2(output_y))
-        output_y = self.fc3(output_y).unsqueeze(1)
-        # feed forward fully connected layers for y feature map (channel)
-        output_z = force_map[:, 2, :, :].view(-1, self.num_flat_features(force_map[:, 2, :, :]))
-        output_z = self.lrelu(self.fc1(output_z))
-        output_z = self.lrelu(self.fc2(output_z))
-        output_z = self.fc3(output_z).unsqueeze(1)
-        return torch.cat((output_x, output_y, output_z), dim=1)
-
-    def num_flat_features(self, x):
-        size = x.size()[1:]  # all dimensions except the batch dimension
-        num_features = 1
-        for s in size:
-            num_features *= s
-        return num_features
-
-class TacNetUNet2(nn.Module):
     def __init__(self, in_nc=6, n_classes=3, num_of_neurons=2048, bilinear=False):
         super(TacNetUNet2, self).__init__()
         self.n_channels = in_nc
