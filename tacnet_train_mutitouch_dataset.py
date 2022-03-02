@@ -16,12 +16,9 @@ from torch import optim
 from torch import nn
 from torchvision import transforms
 from torch.utils.data import ConcatDataset, DataLoader
-
 import numpy as np
-import matplotlib.pyplot as plt
-
 from dataset.tactile_image_dataset import TactileImageDataset
-from networks.unet_model import TacNetUNet2
+from networks.unet_model import TacNetUNet
 
 dev = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 print('The hardware device used: {0}'.format(dev))
@@ -40,7 +37,7 @@ def get_data(train_ds, valid_ds, bs):
     )
 
 def get_model(lr, in_nc=6):
-    model = TacNetUNet2(in_nc=in_nc)
+    model = TacNetUNet(in_nc=in_nc)
     model.to(dev)
     # opt = optim.Adam(model.parameters(), lr=lr, betas=(0.04, 0.999))
     opt = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
@@ -158,12 +155,6 @@ mse_loss = nn.MSELoss()
 
 # fit the model
 train_losses, valid_losses = fit(epochs, model, mse_loss, opt, train_dl, valid_dl)
-
-plt.plot(train_losses, 'r', label='train loss') # plotting t, a separately 
-plt.plot(valid_losses, 'b', label='valid loss') # plotting t, b separately 
-plt.legend()
-figname = 'training_curve_TacNetUnet2_2022_01_25_single_double_touch_dataset.jpg'
-plt.savefig(os.path.join(root_dir, 'iotouch_env/resources/training_curve', figname))
 
 model_name = 'TacNetUnet2_2022_01_25_single_double_touch_dataset.pt' # name_year_month_day
 model_name_path = os.path.join('iotouch_env/train_model', model_name)
