@@ -3,9 +3,19 @@ Open-source simulation tool and sim2real method for Large-scale Tactile Sensing 
 
 ![Overview](https://github.com/Ho-lab-jaist/TacLink-Sim2Real/blob/main/figures/Fig_simtacls_overview.png)
 
-## For Developers
+## Documentation
+### Real-time perception
+Run 
 
-## TO-DO
+```
+$ python simtacls_run_realtime
+```
+Please note that the following dependecies required:
+- pytorch
+- opencv-python
+- pyvista
+- pyvistaqt
+
 ### Soft skin modelling, using SOFA:
 
 ### Image acquisition module for obtaining tactile image dataset, using ROS/GAZEBO:
