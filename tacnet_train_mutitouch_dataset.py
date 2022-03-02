@@ -23,12 +23,11 @@ from networks.unet_model import TacNetUNet
 dev = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 print('The hardware device used: {0}'.format(dev))
 
-root_dir = '/home/protac/remoteDir'
-init_path = os.path.join(root_dir, 'iotouch_env/train_data/simulated_data/output_label/init_data.csv')
-single_label_path = os.path.join(root_dir, 'iotouch_env/train_data/simulated_data/output_label/single_point_touch')
-double_label_path = os.path.join(root_dir, 'iotouch_env/train_data/simulated_data/output_label/double_point_touch')
-single_input_path = os.path.join(root_dir, 'iotouch_env/train_data/simulated_data/tactile_image/single_point_touch')
-double_input_path = os.path.join(root_dir, 'iotouch_env/train_data/simulated_data/tactile_image/double_point_touch')
+init_path = os.path.join('./data_samples', 'simulated_data/output_label/init_data.csv')
+single_label_path = os.path.join('./data_samples', 'simulated_data/output_label/single_point_touch')
+double_label_path = os.path.join('./data_samples', 'simulated_data/output_label/double_point_touch')
+single_input_path = os.path.join('./data_samples', 'simulated_data/tactile_image/single_point_touch')
+double_input_path = os.path.join('./data_samples', 'simulated_data/tactile_image/double_point_touch')
 
 def get_data(train_ds, valid_ds, bs):
     return (
@@ -113,7 +112,6 @@ train_double_input_path = os.path.join(double_input_path, 'train')
 single_train_ds = TactileImageDataset(init_path, train_single_label_path, train_single_input_path, transform=transform)
 double_train_ds = TactileImageDataset(init_path, train_double_label_path, train_double_input_path, transform=transform)
 print("The number of train single and double tactile dateset: {0}-{1}".format(len(single_train_ds), len(double_train_ds)))
-
 
 test_single_label_path = os.path.join(single_label_path, 'test', 'single_label_pos.csv')
 test_double_label_path = os.path.join(double_label_path, 'test', 'double_label_pos.csv')
