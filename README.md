@@ -1,7 +1,10 @@
 # SimTacLS: Toward a Platform for Simulation and Learning of Vision-based Tactile Sensing at Large Scale
-Open-source simulation tool and sim2real method for large-scale vision-based tactile (ViTac) sensing devices, based on SOFA-GAZEBO-GAN pipeline. The overview of the proposed method could be seen below.
+Open-source simulation tool and sim2real method for large-scale vision-based tactile (ViTac) sensing devices, based on SOFA-GAZEBO-GAN pipeline. 
 
-![Overview](https://github.com/Ho-lab-jaist/TacLink-Sim2Real/blob/main/figures/Fig_simtacls_overview.png)
+A video demonstration is at:
+[![IMAGE ALT TEXT](https://github.com/Ho-lab-jaist/TacLink-Sim2Real/blob/main/figures/Fig_simtacls_overview.png)](https://youtu.be/bFY4CV5Wk9g "SimTacLS: Toward a Platform for Simulation & Learning of Vision-based Tactile Sensing at Large Scale")
+
+<!-- ![Overview](https://github.com/Ho-lab-jaist/TacLink-Sim2Real/blob/main/figures/Fig_simtacls_overview.png) -->
 
 ## Documentation
 ### Real-time perception
