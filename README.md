@@ -89,10 +89,10 @@ Note that the full simulation dataset is required for the program executaion, fo
 Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 - Project Manager
-	- Ho Anh Van - [van-ho@jaist.ac.jp](mailto:van-ho@jaist.ac.jp)
+	- Ho Anh Van - [van-ho[at]jaist.ac.jp](mailto:van-ho[at]jaist.ac.jp)
 - Developers
-	- Nguyen Huu Nhan - [nhnhan@jaist.ac.jp](nhnhan@jaist.ac.jp)
-	- Luu Khanh Quan - [quan-luu@jaist.ac.jp](mailto:quan-luu@jaist.ac.jp)
+	- Nguyen Huu Nhan - [nhnha[at]jaist.ac.jp](nhnhan[at]jaist.ac.jp)
+	- Luu Khanh Quan - [quan-luu[at]jaist.ac.jp](mailto:quan-luu[at]jaist.ac.jp)
 ## Acknowledgements
 This work was supported in part by JSPS KAKENHI under Grant 18H01406 and JST Precursory Research for Embryonic Science and Technology PRESTO under Grant JPMJPR2038.
 
