@@ -9,6 +9,12 @@ The overview of the pipeline is at:
 ![Overview](https://github.com/Ho-lab-jaist/TacLink-Sim2Real/blob/main/figures/Fig_simtacls_overview.png)
 
 ## Documentation
+
+### Training R2S-TN (Gan) network
+Create a `data` directory with `train` and `test` subfolders to organize the respective datasets. Each dataset contains pairs of `sim` and `real` images.
+
+
+
 ### Real-time perception
 Run: 
 ```
